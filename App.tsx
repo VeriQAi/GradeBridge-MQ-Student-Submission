@@ -362,25 +362,59 @@ const App: React.FC = () => {
             <p className="text-sm text-gray-600">
               Your instructor will provide a `.json` assignment file (encrypted). Upload it here.
             </p>
-            <label className="flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 rounded cursor-pointer w-fit">
-              <Upload className="w-4 h-4" />
-              <span>Choose .json file</span>
-              <input
-                type="file"
-                accept=".json"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) void handleAssignmentFile(f);
-                }}
-                className="hidden"
-              />
-            </label>
-            <button
-              onClick={() => setPhase('name')}
-              className="text-sm text-gray-500 hover:underline"
-            >
-              Back
-            </button>
+
+            {wrongApp?.kind === 'lab' ? (
+              <div className="border-2 border-amber-500 bg-amber-50 rounded p-4 space-y-2">
+                <h3 className="font-bold text-amber-900 flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5" />
+                  This is a lab/homework assignment, not an MQ quiz.
+                </h3>
+                <p className="text-sm text-amber-900">
+                  The file you loaded looks like a regular GradeBridge lab or
+                  homework assignment (it has problems with subsections). This
+                  app only handles timed multiple-choice quizzes.
+                </p>
+                <p className="text-sm text-amber-900">
+                  Please use the lab Student Submission app instead:
+                </p>
+                <a
+                  href="https://veriqai.github.io/GradeBridge-Student-Submission/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-amber-700 hover:bg-amber-800 text-white rounded font-semibold"
+                >
+                  Open lab Student Submission &rarr;
+                </a>
+                <button
+                  onClick={() => setWrongApp(null)}
+                  className="block text-xs text-amber-700 hover:underline mt-2"
+                >
+                  Try a different file
+                </button>
+              </div>
+            ) : (
+              <>
+                <label className="flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 rounded cursor-pointer w-fit">
+                  <Upload className="w-4 h-4" />
+                  <span>Choose .json file</span>
+                  <input
+                    type="file"
+                    accept=".json"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      if (f) void handleAssignmentFile(f);
+                    }}
+                    className="hidden"
+                  />
+                </label>
+                <button
+                  onClick={() => setPhase('name')}
+                  className="text-sm text-gray-500 hover:underline"
+                >
+                  Back
+                </button>
+              </>
+            )}
           </section>
         )}
 
