@@ -122,7 +122,7 @@ const App: React.FC = () => {
       //   MQ assignments have a questionPool array.
       //   Lab assignments have a problems array (each problem has subsections).
       const looksLikeMq =
-        obj && typeof obj === 'object' && Array.isArray((obj as MQAssignmentSpec).questionPool);
+        obj && typeof obj === 'object' && Array.isArray((obj as { questionPool?: unknown[] }).questionPool);
       const looksLikeLab =
         obj && typeof obj === 'object' && Array.isArray((obj as { problems?: unknown[] }).problems);
 
