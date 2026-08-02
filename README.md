@@ -5,7 +5,7 @@ Take a timed multiple-choice assessment in the browser. Pledge-signed, encrypted
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-**[Live Demo](https://veriqai.github.io/GradeBridge-MQ-Student-Submission/)**
+**[Live Demo](https://bridgesuite.github.io/GradeBridge-MQ-Student-Submission/)**
 
 ---
 
@@ -13,11 +13,11 @@ Take a timed multiple-choice assessment in the browser. Pledge-signed, encrypted
 
 **LMS quiz tools** lock you into a single platform and can leave you scrambling when the LMS goes down.
 
-**GradeBridge MQ workflow:** an instructor exports an encrypted assignment file from the **[MQ Assignment Maker](https://github.com/VeriQAi/GradeBridge-MQ-Assignment-Maker)**. The student loads it here, takes the timed quiz, signs the honor pledge, and downloads a single ZIP to upload to Gradescope. A Python autograder running in Gradescope decrypts the submission and grades automatically.
+**GradeBridge MQ workflow:** an instructor exports an encrypted assignment file from the **[MQ Assignment Maker](https://github.com/BridgeSuite/GradeBridge-MQ-Assignment-Maker)**. The student loads it here, takes the timed quiz, signs the honor pledge, and downloads a single ZIP to upload to Gradescope. A Python autograder running in Gradescope decrypts the submission and grades automatically.
 
 **The three-component workflow:**
 
-1. **[MQ Assignment Maker](https://github.com/VeriQAi/GradeBridge-MQ-Assignment-Maker)** — Instructor builds the encrypted assignment file.
+1. **[MQ Assignment Maker](https://github.com/BridgeSuite/GradeBridge-MQ-Assignment-Maker)** — Instructor builds the encrypted assignment file.
 2. **MQ Student Submission** (this app) — Student takes the timed quiz and downloads the encrypted submission ZIP.
 3. **MQ Autograder** (Python, Docker) — Runs in Gradescope, scores the submission, returns Gradescope `results.json`.
 
@@ -43,7 +43,7 @@ Take a timed multiple-choice assessment in the browser. Pledge-signed, encrypted
 ### Take a Quiz
 
 1. Get the encrypted assignment `.json` file from your instructor.
-2. Go to the [Live Demo](https://veriqai.github.io/GradeBridge-MQ-Student-Submission/).
+2. Go to the [Live Demo](https://bridgesuite.github.io/GradeBridge-MQ-Student-Submission/).
 3. Enter your **first and last name** as they appear in your Gradescope account.
 4. Click **Choose .json file** and pick the file your instructor sent.
 5. Read the **Honor Code expectations** on the preamble screen, check the acknowledgment box, and click **Begin quiz**.
@@ -59,7 +59,7 @@ The app auto-submits whatever answers you have entered. Your submission is marke
 ### Local Development
 
 ```bash
-git clone https://github.com/VeriQAi/GradeBridge-MQ-Student-Submission.git
+git clone https://github.com/BridgeSuite/GradeBridge-MQ-Student-Submission.git
 cd GradeBridge-MQ-Student-Submission
 npm install
 npm run dev
@@ -153,4 +153,4 @@ The submission ZIP contains a single `.json` file (encrypted). Gradescope automa
 
 ## License
 
-MIT
+MIT © 2026 The Regents of the University of California. See [`LICENSE`](LICENSE).

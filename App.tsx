@@ -378,7 +378,7 @@ const App: React.FC = () => {
                   Please use the lab Student Submission app instead:
                 </p>
                 <a
-                  href="https://veriqai.github.io/GradeBridge-Student-Submission/"
+                  href="https://bridgesuite.github.io/GradeBridge-Student-Submission/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-4 py-2 bg-amber-700 hover:bg-amber-800 text-white rounded font-semibold"
